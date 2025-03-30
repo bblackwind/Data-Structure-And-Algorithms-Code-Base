@@ -35,7 +35,7 @@ public class l001{
     public static void main(String[] args){
         int n = sc.nextInt();
         // System.out.println(countDigit(n));
-        printDigitInReverse(n);
+        printDigitInReverse(n); 
     }
 
 }

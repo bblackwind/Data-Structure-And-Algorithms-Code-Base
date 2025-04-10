@@ -22,33 +22,35 @@ public class l001{
         }
     }
 
-    public static void printDigit(int n){
+    public static int powerEqualDigits(int n){
+        int pow = 1;
+        while(n!=0){
+            n/=10;
+            pow *= 10;
+        }
+        return pow;
+    }
 
-        int count = countDigit(n);
+    public static void countDigitOfNumber(int n){
+
+        int pow = powerEqualDigits(n);
+        pow /= 10;
 
         while(n!=0){
-            int rem = n%count;
+            int digit = n/pow;
+            System.out.println(digit);
+            n%=pow;
+            pow/=10;
         }
-
     }
 
     public static void main(String[] args){
         int n = sc.nextInt();
         // System.out.println(countDigit(n));
-        printDigitInReverse(n); 
+        // printDigitInReverse(n); 
+        
+        // System.out.println(powerEqualDigits(n));
+        countDigitOfNumber(n);
     }
 
 }
-
-rouiter.get('/login', abc() , (req, res) => {
-    res.render('login')
-})
-
-let abc(a,b) => {
-    a = 10
-    b = 12
-
-    log(a + b)
-}
-
-abc(2, 3)

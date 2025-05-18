@@ -24,6 +24,7 @@ public class l001{
 
     public static int powerEqualDigits(int n){
         int pow = 1;
+        pow /= 10;
         while(n!=0){
             n/=10;
             pow *= 10;
@@ -31,18 +32,22 @@ public class l001{
         return pow;
     }
 
+    // constraint 10 power 9 
+    //test case 1000
     public static void countDigitOfNumber(int n){
 
         int pow = powerEqualDigits(n);
-        pow /= 10;
+        
 
-        while(n!=0){
+        while(pow!=0){
             int digit = n/pow;
             System.out.println(digit);
             n%=pow;
             pow/=10;
         }
     }
+    
+    
 
     public static void main(String[] args){
         int n = sc.nextInt();
